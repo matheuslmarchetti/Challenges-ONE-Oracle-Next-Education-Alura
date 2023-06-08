@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,19 +14,25 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div class="div-main">
-        <h2>Digite seu texto</h2>
-        <img src="./images/logo.svg" alt="Logo Alura" class="logo-alura">
-        <div class="div-rectangle">
-            <img src="./images/icone.svg" alt="Ícone" class="icone">
-            <div class="div-text">
-                <h3>Nenhuma mensagem encontrada</h3>
-                <p>
-                    Digite um texto que você deseja criptografar ou descriptografar.
-                </p>
+    <header>
+        <img class="logoAlura" src="./images/logo.svg" alt="Logo Alura">
+    </header>
+    <main>
+        <section>
+            <textarea class="textArea" cols="41" rows="4" placeholder="Digite seu texto"></textarea>
+            <div class="informacao">
+                <h6>Apenas letras minúsculas e sem acento.</h6>
             </div>
-        </div>
-    </div>
+            <div class="botoes">
+                <button class="btn-encripitar">Criptografar</button>
+                <button class="btn-desencripitar">Descriptografar</button>
+            </div>
+        </section>
+        <section>
+            <textarea class="mensagem" cols="20" rows="10"></textarea>
+            <button class="btn-copiar">Copiar</button>
+        </section>
+    </main>
     <script src="./js/script.js"></script>
 </body>
 </html>
