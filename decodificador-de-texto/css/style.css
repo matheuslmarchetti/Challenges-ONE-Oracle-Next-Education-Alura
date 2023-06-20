@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    /* background: #E5E5E5; */
+    background: rgb(20, 20, 20);
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 32px;
@@ -10,38 +10,59 @@
 .logoAlura {
     margin-left: 10px;
     padding-top: 10px;
-    width:2%;
+    width:5%;
 }
 
 main {
     display: flex;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     margin-left: 80px;
 }
 
-.textArea {
+.text-area {
     border: none;
+    background: rgb(14, 13, 13);
     color: #0A3871;
     margin-top: 90px;
     text-transform: lowercase;
 }
+
 ::placeholder { color: #0A3871; }
-  .textArea:focus {
-      outline: none;
-    }
+
+.text-area:focus {
+    outline: none;
+}
+
+h6 {
+    font-size: small;
+    color: white;
+}
 
 .mensagem {
-    /* background: white; */
-    background-image: url("./images/boneco.png");
+    background: rgb(14, 13, 13);
+    background-image: url(/decodificador-de-texto/images/boneco.svg);
     background-repeat: no-repeat;
+    background-size: 300px 300px;
+    background-position: center 0px;
     border: none;
     border-radius: 24px;
     color: #0A3871;
-    margin-left: 98px;
+    margin-left: 10px;
     margin-top: 20px;
     padding-left: 20px;
     position: fixed;
 }
+
+.mensagem::placeholder {
+    color: #a8a6a6;
+    font-size: medium;
+    font-weight: bold;
+    margin-left: 80px;
+    margin-top: 300px;
+    position: absolute;
+    width: 280px;
+}
+
 .mensagem:focus {
     outline: none;
 }
@@ -51,7 +72,7 @@ main {
     margin-top: 18px;
 }
 
-.btn-desencriptar {
+.btn-desencripitar {
     background: #D8DFE8;
     border: 1px solid #0A3871;
     border-radius: 24px;
@@ -62,7 +83,7 @@ main {
     width: 328px;
 }
 
-.btn-encriptar {
+.btn-encripitar {
     background-color: #0A3871;
     border: 1px solid #0A3871;
     border-radius: 24px;
@@ -74,11 +95,12 @@ main {
 
 .btn-copiar {
     border: 1px solid #0A3871;
+    background-image: linear-gradient(120deg, white, #0A3871);
     border-radius: 24px;
     color: #0A3871;
     cursor: pointer;
     height: 67px;
-    margin-left: 108px;
+    margin-left: 60px;
     margin-top: 402px;
     position: absolute;
     width: 336px;
