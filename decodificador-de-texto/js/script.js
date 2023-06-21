@@ -9,10 +9,16 @@ const mensagem = document.querySelector(".mensagem");
 // `A letra "u" é convertida para "ufat"`
 
 function btnEncriptar() {
-    const textoEncriptado = encriptar(textArea.value);
-    mensagem.style.backgroundImage='none';
-    mensagem.value = textoEncriptado;
-    textArea.value = "";
+    if (textArea.value === "") {
+        mensagem.style.backgroundImage="url('/decodificador-de-texto/images/boneco.svg')";
+        mensagem.readOnly = true;
+    } else {
+        const textoEncriptado = encriptar(textArea.value);
+        mensagem.style.backgroundImage='none';
+        mensagem.readOnly = true;
+        mensagem.value = textoEncriptado;
+        textArea.value = "";   
+    }
 }
 
 
@@ -32,10 +38,16 @@ function encriptar(stringEncriptada) {
 
 
 function btnDesencriptar() {
-    const textoDesencriptado = desencriptar(textArea.value);
-    mensagem.style.backgroundImage='none';
-    mensagem.value = textoDesencriptado;
-    textArea.value = "";
+    if (textArea.value === "") {
+        mensagem.style.backgroundImage="url('/decodificador-de-texto/images/boneco.svg')";
+        mensagem.readOnly = true;
+    } else {
+        const textoDesencriptado = desencriptar(textArea.value);
+        mensagem.style.backgroundImage='none';
+        mensagem.readOnly = true;
+        mensagem.value = textoDesencriptado;
+        textArea.value = "";
+    }
 }
 
 
@@ -51,4 +63,8 @@ function desencriptar(stringDesencriptada) {
     }
 
     return stringDesencriptada;
+}
+
+function btnCopiar() {
+    alert('Test');
 }
