@@ -66,5 +66,7 @@ function desencriptar(stringDesencriptada) {
 }
 
 function btnCopiar() {
-    alert('Test');
+    mensagem.select();
+    mensagem.setSelectionRange(0, 99999)
+    navigator.clipboard.writeText(mensagem.value);
 }
