@@ -18,7 +18,9 @@ main {
     margin-bottom: 10px;
     margin-left: 80px;
 }
-
+textarea {
+    resize: none;
+}
 .text-area {
     border: none;
     background: rgb(14, 13, 13);

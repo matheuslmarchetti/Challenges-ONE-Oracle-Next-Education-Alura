@@ -10,6 +10,7 @@ const mensagem = document.querySelector(".mensagem");
 
 function btnEncriptar() {
     const textoEncriptado = encriptar(textArea.value);
+    mensagem.style.backgroundImage='none';
     mensagem.value = textoEncriptado;
     textArea.value = "";
 }
@@ -32,6 +33,7 @@ function encriptar(stringEncriptada) {
 
 function btnDesencriptar() {
     const textoDesencriptado = desencriptar(textArea.value);
+    mensagem.style.backgroundImage='none';
     mensagem.value = textoDesencriptado;
     textArea.value = "";
 }
