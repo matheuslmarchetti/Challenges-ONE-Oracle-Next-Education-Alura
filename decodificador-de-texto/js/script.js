@@ -12,6 +12,7 @@ function btnEncriptar() {
     if (textArea.value === "") {
         mensagem.style.backgroundImage="url('/decodificador-de-texto/images/boneco.svg')";
         mensagem.readOnly = true;
+        mensagem.value = "";
     } else {
         const textoEncriptado = encriptar(textArea.value);
         mensagem.style.backgroundImage='none';
@@ -41,6 +42,7 @@ function btnDesencriptar() {
     if (textArea.value === "") {
         mensagem.style.backgroundImage="url('/decodificador-de-texto/images/boneco.svg')";
         mensagem.readOnly = true;
+        mensagem.value = "";
     } else {
         const textoDesencriptado = desencriptar(textArea.value);
         mensagem.style.backgroundImage='none';
