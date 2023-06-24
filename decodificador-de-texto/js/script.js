@@ -10,7 +10,7 @@ const mensagem = document.querySelector(".mensagem");
 
 function btnEncriptar() {
     if (textArea.value === "") {
-        mensagem.style.backgroundImage="url('/decodificador-de-texto/images/boneco.svg')";
+        mensagem.style.backgroundImage="url('https://raw.githubusercontent.com/matheuslmarchetti/Challenges-ONE-Oracle-Next-Education-Alura/5347ee77361b9c05023706cc548091722a8a4515/decodificador-de-texto/images/boneco.svg')";
         mensagem.readOnly = true;
         mensagem.value = "";
     } else {
@@ -40,7 +40,7 @@ function encriptar(stringEncriptada) {
 
 function btnDesencriptar() {
     if (textArea.value === "") {
-        mensagem.style.backgroundImage="url('/decodificador-de-texto/images/boneco.svg')";
+        mensagem.style.backgroundImage="url('https://raw.githubusercontent.com/matheuslmarchetti/Challenges-ONE-Oracle-Next-Education-Alura/5347ee77361b9c05023706cc548091722a8a4515/decodificador-de-texto/images/boneco.svg')";
         mensagem.readOnly = true;
         mensagem.value = "";
     } else {
