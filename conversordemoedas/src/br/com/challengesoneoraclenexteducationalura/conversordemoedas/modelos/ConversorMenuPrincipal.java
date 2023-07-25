@@ -1,5 +1,7 @@
 package br.com.challengesoneoraclenexteducationalura.conversordemoedas.modelos;
 
+import java.io.IOException;
+
 import javax.swing.JOptionPane;
 
 public class ConversorMenuPrincipal {
@@ -7,7 +9,7 @@ public class ConversorMenuPrincipal {
 	private Object[] opcoesDeConversor = {"Escolha uma Opção", "Conversor de Moedas", "Conversor de Temperatura", 
 			"Conversor de Tempo"};
 	
-	public ConversorMenuPrincipal() {
+	public ConversorMenuPrincipal() throws IOException, InterruptedException {
 		
 		Object selection = JOptionPane.showInputDialog(null, "Selecione um Conversor","Menu", 
 				JOptionPane.PLAIN_MESSAGE, 

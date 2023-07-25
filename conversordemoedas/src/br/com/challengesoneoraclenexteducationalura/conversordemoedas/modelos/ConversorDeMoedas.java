@@ -1,5 +1,14 @@
 package br.com.challengesoneoraclenexteducationalura.conversordemoedas.modelos;
 
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpClient.Redirect;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.net.http.HttpResponse.BodyHandlers;
+import java.time.Duration;
+
 import javax.swing.JOptionPane;
 
 public class ConversorDeMoedas {
@@ -7,7 +16,7 @@ public class ConversorDeMoedas {
 	private double valorConvertidoParaDouble;
 	private String entradaDeValorParaConversao;
 
-	public ConversorDeMoedas() {
+	public ConversorDeMoedas() throws IOException, InterruptedException {
 		
 		entradaDeValorParaConversao = JOptionPane.showInputDialog(null, "Bem-vindo(a)!" + 
 				System.lineSeparator() + "Insira um valor a ser convertido: ", 
@@ -17,14 +26,14 @@ public class ConversorDeMoedas {
 
 	}
 	
-	public void LoopLeituraDeDados() {
+	public void LoopLeituraDeDados() throws IOException, InterruptedException {
 		entradaDeValorParaConversao = JOptionPane.showInputDialog(null, "Insira um valor a ser convertido: ", 
 						"Conversor de Moedas", JOptionPane.QUESTION_MESSAGE);	
 		
 		LeituraDeDados();
 	}
 	
-	public void LeituraDeDados() {
+	public void LeituraDeDados() throws IOException, InterruptedException {
 		
 		try {
 			valorConvertidoParaDouble = Double.parseDouble(entradaDeValorParaConversao);
@@ -47,7 +56,7 @@ public class ConversorDeMoedas {
 		
 	}
 	
-	public void ConversorDeMoedasOpcoes() {
+	public void ConversorDeMoedasOpcoes() throws IOException, InterruptedException {
 		Object[] opcoesDeMoedas = 
 			{
 					"De Reais a Dólares", //0
@@ -69,6 +78,22 @@ public class ConversorDeMoedas {
 				null, opcoesDeMoedas, opcoesDeMoedas[0]);
 		
 		if (selection == opcoesDeMoedas[0]) {
+			HttpRequest request = HttpRequest.newBuilder()
+					.GET()
+					.uri(URI.create("https://economia.awesomeapi.com.br/last/USD-BRL"))
+					.timeout(Duration.ofSeconds(5))
+					.build();
+			HttpClient httpClient = HttpClient.newBuilder()
+					.connectTimeout(Duration.ofSeconds(5))
+					.followRedirects(Redirect.NORMAL)
+					.build();
+			HttpResponse<String> response = httpClient.send(request, BodyHandlers.ofString());
+			System.out.println(response.body());
+			System.out.println(response.statusCode());
+			System.out.println(response.headers());
+			System.out.println(response.version());
+			
+			
 			double cotacao = 4.75;
 			double result = valorConvertidoParaDouble / cotacao ;
 			JOptionPane.showMessageDialog(null, "US$ " + result, "Resultado", 
