@@ -17,6 +17,13 @@ public class ConversorDeMoedas {
 
 	}
 	
+	public void LoopLeituraDeDadosErrados() {
+		entradaDeValorParaConversao = JOptionPane.showInputDialog(null, "Insira um valor a ser convertido: ", 
+						"Conversor de Moedas", JOptionPane.QUESTION_MESSAGE);	
+		
+		LeituraDeDados();
+	}
+	
 	public void LeituraDeDados() {
 		
 		try {
@@ -27,7 +34,8 @@ public class ConversorDeMoedas {
 			} else {
 				JOptionPane.showMessageDialog(null, "Informe um valor maior que zero!" , "Atenção!", 
 						JOptionPane.WARNING_MESSAGE);
-				new ConversorDeMoedas();
+				//new ConversorDeMoedas();
+				LoopLeituraDeDadosErrados();
 			}
 		} catch (NullPointerException e) {
 			JOptionPane.showMessageDialog(null, "Voltando ao Menu Inicial...", "Informação", 
@@ -36,7 +44,7 @@ public class ConversorDeMoedas {
 		} catch (NumberFormatException e) {
 			JOptionPane.showMessageDialog(null, "Digite apenas números!" , "Erro!", 
 					JOptionPane.ERROR_MESSAGE);
-			new ConversorDeMoedas();
+			LoopLeituraDeDadosErrados();
 		}
 		
 	}
