@@ -4,12 +4,14 @@ import java.io.IOException;
 
 import javax.swing.JOptionPane;
 
+import org.json.simple.parser.ParseException;
+
 public class ConversorMenuPrincipal {
 	
 	private Object[] opcoesDeConversor = {"Escolha uma Opção", "Conversor de Moedas", "Conversor de Temperatura", 
 			"Conversor de Tempo"};
 	
-	public ConversorMenuPrincipal() throws IOException, InterruptedException {
+	public ConversorMenuPrincipal() throws IOException, InterruptedException, ParseException {
 		
 		Object selection = JOptionPane.showInputDialog(null, "Selecione um Conversor","Menu", 
 				JOptionPane.PLAIN_MESSAGE, 

@@ -7,16 +7,22 @@ import java.net.http.HttpClient.Redirect;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
+import java.text.NumberFormat;
 import java.time.Duration;
+import java.util.Locale;
 
 import javax.swing.JOptionPane;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 public class ConversorDeMoedas {
 	
 	private double valorConvertidoParaDouble;
 	private String entradaDeValorParaConversao;
 
-	public ConversorDeMoedas() throws IOException, InterruptedException {
+	public ConversorDeMoedas() throws IOException, InterruptedException, ParseException {
 		
 		entradaDeValorParaConversao = JOptionPane.showInputDialog(null, "Bem-vindo(a)!" + 
 				System.lineSeparator() + "Insira um valor a ser convertido: ", 
@@ -26,14 +32,14 @@ public class ConversorDeMoedas {
 
 	}
 	
-	public void LoopLeituraDeDados() throws IOException, InterruptedException {
+	public void LoopLeituraDeDados() throws IOException, InterruptedException, ParseException {
 		entradaDeValorParaConversao = JOptionPane.showInputDialog(null, "Insira um valor a ser convertido: ", 
 						"Conversor de Moedas", JOptionPane.QUESTION_MESSAGE);	
 		
 		LeituraDeDados();
 	}
 	
-	public void LeituraDeDados() throws IOException, InterruptedException {
+	public void LeituraDeDados() throws IOException, InterruptedException, ParseException {
 		
 		try {
 			valorConvertidoParaDouble = Double.parseDouble(entradaDeValorParaConversao);
@@ -56,21 +62,21 @@ public class ConversorDeMoedas {
 		
 	}
 	
-	public void ConversorDeMoedasOpcoes() throws IOException, InterruptedException {
+	public void ConversorDeMoedasOpcoes() throws IOException, InterruptedException, ParseException {
 		Object[] opcoesDeMoedas = 
 			{
-					"De Reais a Dólares", //0
-					"De Reais a Euros", //1
-					"De Reais a Libras", //2
-					"Dólares a Reais", //3
-					"Dólares a Euros", //4
-					"Dólares a Libras", //5
-					"Euros a Reais", //6
-					"Euros a Dólares", //7
-					"Euros a Libras", //8
-					"Libras a Reais", //9
-					"Libras a Dólares", //10
-					"Libras a Euros", //11
+					"De Real a Dólar", //0
+					"De Real a Euro", //1
+					"De Real a Libra Esterlina", //2
+					"Dólar a Real", //3
+					"Dólar a Euro", //4
+					"Dólar a Libra Esterlina", //5
+					"Euro a Real", //6
+					"Euro a Dólar", //7
+					"Euro a Libra Esterlina", //8
+					"Libra Esterlina a Real", //9
+					"Libra Esterlina a Dólar", //10
+					"Libra Esterlina a Euro", //11
 			};
 		
 		Object selection = JOptionPane.showInputDialog(null, "Selecione a moeda de conversão","Moedas", 
@@ -78,51 +84,115 @@ public class ConversorDeMoedas {
 				null, opcoesDeMoedas, opcoesDeMoedas[0]);
 		
 		if (selection == opcoesDeMoedas[0]) {
-			HttpRequest request = HttpRequest.newBuilder()
-					.GET()
-					.uri(URI.create("https://economia.awesomeapi.com.br/last/USD-BRL"))
-					.timeout(Duration.ofSeconds(5))
-					.build();
-			HttpClient httpClient = HttpClient.newBuilder()
-					.connectTimeout(Duration.ofSeconds(5))
-					.followRedirects(Redirect.NORMAL)
-					.build();
-			HttpResponse<String> response = httpClient.send(request, BodyHandlers.ofString());
-			System.out.println(response.body());
-			System.out.println(response.statusCode());
-			System.out.println(response.headers());
-			System.out.println(response.version());
 			
-			
-			double cotacao = 4.75;
-			double result = valorConvertidoParaDouble / cotacao ;
-			JOptionPane.showMessageDialog(null, "US$ " + result, "Resultado", 
-					JOptionPane.INFORMATION_MESSAGE);
+			ChamadaApiCotacaoDeMoedas("BRLUSD", "en", "US");
 			LoopLeituraDeDados();
+			
 		} else if(selection == opcoesDeMoedas[1]) {
-			double cotacao = 5.25;
-			double result = valorConvertidoParaDouble / cotacao ;
-			JOptionPane.showMessageDialog(null, "€ " + result, "Resultado", 
-					JOptionPane.INFORMATION_MESSAGE);
+			
+			ChamadaApiCotacaoDeMoedas("BRLEUR", "fr", "FR");
 			LoopLeituraDeDados();
+			
 		} else if(selection == opcoesDeMoedas[2]) {
-			double cotacao = 6.13;
-			double result = valorConvertidoParaDouble / cotacao ;
-			JOptionPane.showMessageDialog(null, "£ " + result, "Resultado", 
-					JOptionPane.INFORMATION_MESSAGE);
+			
+			ChamadaApiCotacaoDeMoedas("BRLGBP", "en", "GB");
 			LoopLeituraDeDados();
+			
 		} else if(selection == opcoesDeMoedas[3]) {
-			double cotacao = 4.75;
-			double result = valorConvertidoParaDouble * cotacao ;
-			JOptionPane.showMessageDialog(null, "R$ " + result, "Resultado", 
-					JOptionPane.INFORMATION_MESSAGE);
+			
+			ChamadaApiCotacaoDeMoedas("USDBRL", "pt", "BR");
 			LoopLeituraDeDados();
-		} else {
+			
+		} else if(selection == opcoesDeMoedas[4]) {
+			
+			ChamadaApiCotacaoDeMoedas("USDEUR", "fr", "FR");
+			LoopLeituraDeDados();
+			
+		}  else if(selection == opcoesDeMoedas[5]) {
+			
+			ChamadaApiCotacaoDeMoedas("USDGBP", "en", "GB");
+			LoopLeituraDeDados();
+			
+		}  else if(selection == opcoesDeMoedas[6]) {
+			
+			ChamadaApiCotacaoDeMoedas("EURBRL", "pt", "BR");
+			LoopLeituraDeDados();
+			
+		}  else if(selection == opcoesDeMoedas[7]) {
+			
+			ChamadaApiCotacaoDeMoedas("EURUSD", "en", "US");
+			LoopLeituraDeDados();
+			
+		}  else if(selection == opcoesDeMoedas[8]) {
+			
+			ChamadaApiCotacaoDeMoedas("EURGBP", "en", "GB");
+			LoopLeituraDeDados();
+			
+		}  else if(selection == opcoesDeMoedas[9]) {
+			
+			ChamadaApiCotacaoDeMoedas("GBPBRL", "pt", "BR");
+			LoopLeituraDeDados();
+			
+		}  else if(selection == opcoesDeMoedas[10]) {
+			
+			ChamadaApiCotacaoDeMoedas("GBPUSD", "en", "US");
+			LoopLeituraDeDados();
+			
+		}  else if(selection == opcoesDeMoedas[11]) {
+			
+			ChamadaApiCotacaoDeMoedas("GBPEUR", "fr", "FR");
+			LoopLeituraDeDados();
+			
+		}  else {
 			JOptionPane.showMessageDialog(null, "Opção Inválida", "Atenção", 
 					JOptionPane.WARNING_MESSAGE);
 			LoopLeituraDeDados();
 		}
 		
+	}
+	
+	public void ChamadaApiCotacaoDeMoedas(String moedas, String tagLanguage, String tagCountry) {
+		HttpRequest request = HttpRequest.newBuilder()
+				.GET()
+				.uri(URI.create("http://economia.awesomeapi.com.br/json/last/BRL-USD,BRL-EUR,BRL-GBP,"
+						+ "USD-BRL,USD-EUR,USD-GBP,EUR-BRL,EUR-USD,EUR-GBP,GBP-BRL,GBP-USD,GBP-EUR"))
+				.timeout(Duration.ofSeconds(5))
+				.build();
+		HttpClient httpClient = HttpClient.newBuilder()
+				.connectTimeout(Duration.ofSeconds(5))
+				.followRedirects(Redirect.NORMAL)
+				.build();
+		HttpResponse<String> response = null;
+		try {
+			response = httpClient.send(request, BodyHandlers.ofString());
+			//System.out.println(response.body());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		Object jsonParser;
+		try {
+			jsonParser = new JSONParser().parse(response.body());
+			JSONObject objJsonObject = (JSONObject) jsonParser;
+			JSONObject objMoedas = (JSONObject) objJsonObject.get(moedas);
+			String bid = (String) objMoedas.get("bid");
+			//System.out.println(bid);
+			
+			double cotacao = Double.parseDouble(bid);
+			double result = valorConvertidoParaDouble * cotacao;
+			Locale locale = new Locale(tagLanguage,tagCountry);
+			NumberFormat dinheiro = NumberFormat.getCurrencyInstance(locale);
+			JOptionPane.showMessageDialog(null, "O valor convertido equivale a: " + dinheiro.format(result), "Resultado", 
+					JOptionPane.INFORMATION_MESSAGE);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
 	}
 	
 }
