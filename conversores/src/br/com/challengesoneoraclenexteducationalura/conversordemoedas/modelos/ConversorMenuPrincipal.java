@@ -3,6 +3,7 @@ package br.com.challengesoneoraclenexteducationalura.conversordemoedas.modelos;
 import java.io.IOException;
 
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 
 import org.json.simple.parser.ParseException;
 
@@ -12,6 +13,8 @@ public class ConversorMenuPrincipal {
 			"Conversor de Tempo"};
 	
 	public ConversorMenuPrincipal() throws IOException, InterruptedException, ParseException {
+		
+		UIManager.put("OptionPane.cancelButtonText", "Cancelar");
 		
 		Object selection = JOptionPane.showInputDialog(null, "Selecione um Conversor","Menu", 
 				JOptionPane.PLAIN_MESSAGE, 
