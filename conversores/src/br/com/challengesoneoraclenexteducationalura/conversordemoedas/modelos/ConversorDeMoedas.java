@@ -26,7 +26,7 @@ public class ConversorDeMoedas {
 		
 		entradaDeValorParaConversao = JOptionPane.showInputDialog(null, "Bem-vindo(a)!" + 
 				System.lineSeparator() + "Insira um valor a ser convertido: ", 
-						"Conversor de Moedas", JOptionPane.QUESTION_MESSAGE);	
+						"Conversor de Moedas", JOptionPane.QUESTION_MESSAGE);
 		
 		LeituraDeDados();
 
@@ -34,15 +34,15 @@ public class ConversorDeMoedas {
 	
 	public void LoopLeituraDeDados() throws IOException, InterruptedException, ParseException {
 		entradaDeValorParaConversao = JOptionPane.showInputDialog(null, "Insira um valor a ser convertido: ", 
-						"Conversor de Moedas", JOptionPane.QUESTION_MESSAGE);	
-		
+						"Conversor de Moedas", JOptionPane.QUESTION_MESSAGE);
+
 		LeituraDeDados();
 	}
 	
 	public void LeituraDeDados() throws IOException, InterruptedException, ParseException {
 		
 		try {
-			valorConvertidoParaDouble = Double.parseDouble(entradaDeValorParaConversao);
+			valorConvertidoParaDouble = Double.parseDouble(entradaDeValorParaConversao.replace("," , "."));
 			if (valorConvertidoParaDouble >= 0) {
 				ConversorDeMoedasOpcoes();
 			} else {
@@ -55,7 +55,8 @@ public class ConversorDeMoedas {
 					JOptionPane.INFORMATION_MESSAGE);
 					new ConversorMenuPrincipal();
 		} catch (NumberFormatException e) {
-			JOptionPane.showMessageDialog(null, "Digite apenas números!" , "Erro!", 
+			JOptionPane.showMessageDialog(null, "Digite apenas números!" + 
+					System.lineSeparator() + "Não use agrupador de milhar", "Erro!", 
 					JOptionPane.ERROR_MESSAGE);
 			LoopLeituraDeDados();
 		}
@@ -187,12 +188,32 @@ public class ConversorDeMoedas {
 			double result = valorConvertidoParaDouble * cotacao;
 			Locale locale = new Locale(tagLanguage,tagCountry);
 			NumberFormat dinheiro = NumberFormat.getCurrencyInstance(locale);
-			JOptionPane.showMessageDialog(null, "O valor convertido equivale a: " + dinheiro.format(result), "Resultado", 
-					JOptionPane.INFORMATION_MESSAGE);
+			String dinheiroFormat = dinheiro.format(result);
+			if (moedas == "BRLUSD" || moedas == "BRLGBP" || moedas == "EURUSD" || moedas == "EURGBP") {
+				JOptionPane.showMessageDialog(null, "O valor convertido equivale a: " + dinheiroFormat  + 
+						System.lineSeparator() + "O ponto é separador decimal"  + 
+						System.lineSeparator() + "A vírgula agrupador de milhar", "Resultado", 
+						JOptionPane.INFORMATION_MESSAGE);
+			} else if (moedas == "USDBRL" || moedas == "GBPBRL" || moedas == "USDEUR" || moedas == "GBPEUR") {
+				JOptionPane.showMessageDialog(null, "O valor convertido equivale a: " + dinheiroFormat  + 
+						System.lineSeparator() + "A vírgula é separador decimal"  + 
+						System.lineSeparator() + "O ponto agrupador de milhar", "Resultado", 
+						JOptionPane.INFORMATION_MESSAGE);
+			} else {
+				JOptionPane.showMessageDialog(null, "O valor convertido equivale a: " + dinheiroFormat, 
+						"Resultado", JOptionPane.INFORMATION_MESSAGE);
+			}
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
+	}
+	
+	public void ContinuarOuFechar() {
+		
+		JOptionPane.showInputDialog(null, "Deseja Continuar?", 
+				"Conversor de Moedas", JOptionPane.QUESTION_MESSAGE);
+		
 	}
 	
 }
