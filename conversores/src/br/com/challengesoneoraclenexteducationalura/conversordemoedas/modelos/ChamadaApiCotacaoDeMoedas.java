@@ -10,6 +10,10 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class ChamadaApiCotacaoDeMoedas extends ApiCotacaoDeMoedas {
+	
+	private String dinheiroFormat;
+
+
 
 	public ChamadaApiCotacaoDeMoedas(String moedas, String tagLanguage, String tagCountry, double valor) {
 		Object jsonParser;
@@ -18,14 +22,13 @@ public class ChamadaApiCotacaoDeMoedas extends ApiCotacaoDeMoedas {
 			JSONObject objJsonObject = (JSONObject) jsonParser;
 			JSONObject objMoedas = (JSONObject) objJsonObject.get(moedas);
 			String bid = (String) objMoedas.get("bid");
-			// System.out.println(bid);
+			//System.out.println(getResponse());
 
 			double cotacao = Double.parseDouble(bid);
 			double result = valor * cotacao;
 			Locale locale = new Locale(tagLanguage, tagCountry);
 			NumberFormat dinheiro = NumberFormat.getCurrencyInstance(locale);
-			String dinheiroFormat = dinheiro.format(result);
-			//GeraHistorico();
+			dinheiroFormat = dinheiro.format(result);
 			if (moedas == "BRLUSD" || moedas == "BRLGBP" || moedas == "EURUSD" || moedas == "EURGBP") {
 				JOptionPane.showMessageDialog(null,
 						"O valor convertido equivale a: " + dinheiroFormat + System.lineSeparator()
@@ -47,5 +50,4 @@ public class ChamadaApiCotacaoDeMoedas extends ApiCotacaoDeMoedas {
 			e.printStackTrace();
 		}
 	}
-	
 }
