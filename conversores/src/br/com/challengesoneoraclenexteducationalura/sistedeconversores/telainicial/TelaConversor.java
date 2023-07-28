@@ -1,4 +1,4 @@
-package br.com.challengesoneoraclenexteducationalura.conversordemoedas.testes;
+package br.com.challengesoneoraclenexteducationalura.sistedeconversores.telainicial;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import org.json.simple.parser.ParseException;
 
-import br.com.challengesoneoraclenexteducationalura.conversordemoedas.modelos.ConversorMenuPrincipal;
+import br.com.challengesoneoraclenexteducationalura.framesdosconversores.modelos.ConversorMenuPrincipal;
 
 public class TelaConversor {
 	private static JFrame frame;

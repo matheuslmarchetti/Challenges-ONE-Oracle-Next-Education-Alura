@@ -18,10 +18,15 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import br.com.challengesoneoraclenexteducationalura.framesdosconversores.modelos.ConversorMenuPrincipal;
+
 public class ConversorDeMoedas {
 
 	private double valorConvertidoParaDouble;
 	private String entradaDeValorParaConversao;
+	private String[] referencias;
+	private int posicaoLivre;
+	private String dinheiroFormat;
 
 	public ConversorDeMoedas() throws IOException, InterruptedException, ParseException {
 		
@@ -185,7 +190,8 @@ public class ConversorDeMoedas {
 			double result = valorConvertidoParaDouble * cotacao;
 			Locale locale = new Locale(tagLanguage, tagCountry);
 			NumberFormat dinheiro = NumberFormat.getCurrencyInstance(locale);
-			String dinheiroFormat = dinheiro.format(result);
+			dinheiroFormat = dinheiro.format(result);
+			GeraHistorico();
 			if (moedas == "BRLUSD" || moedas == "BRLGBP" || moedas == "EURUSD" || moedas == "EURGBP") {
 				JOptionPane.showMessageDialog(null,
 						"O valor convertido equivale a: " + dinheiroFormat + System.lineSeparator()
@@ -224,6 +230,14 @@ public class ConversorDeMoedas {
 			System.exit(0);
 		}
 
+	}
+	
+	public void GeraHistorico() {
+		referencias = new String[10];
+		posicaoLivre = 0;
+		referencias[0] = dinheiroFormat;
+		String str = referencias[0];
+		System.out.println(str);
 	}
 
 }

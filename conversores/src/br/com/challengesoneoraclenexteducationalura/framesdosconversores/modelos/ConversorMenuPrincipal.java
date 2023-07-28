@@ -1,4 +1,4 @@
-package br.com.challengesoneoraclenexteducationalura.conversordemoedas.modelos;
+package br.com.challengesoneoraclenexteducationalura.framesdosconversores.modelos;
 
 import java.io.IOException;
 
@@ -6,6 +6,10 @@ import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 import org.json.simple.parser.ParseException;
+
+import br.com.challengesoneoraclenexteducationalura.conversordemoedas.modelos.ConversorDeMoedas;
+import br.com.challengesoneoraclenexteducationalura.conversordetemperatura.modelos.ConversorDeTemperatura;
+import br.com.challengesoneoraclenexteducationalura.conversordetempo.modelos.ConversorDeTempo;
 
 public class ConversorMenuPrincipal {
 	

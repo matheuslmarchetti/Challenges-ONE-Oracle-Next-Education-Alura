@@ -1,4 +1,4 @@
-package br.com.challengesoneoraclenexteducationalura.conversordemoedas.modelos;
+package br.com.challengesoneoraclenexteducationalura.framesdosconversores.modelos;
 
 import java.awt.Color;
 
