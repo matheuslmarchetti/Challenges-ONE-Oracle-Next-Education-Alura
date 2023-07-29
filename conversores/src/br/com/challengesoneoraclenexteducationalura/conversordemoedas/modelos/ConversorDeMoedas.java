@@ -20,11 +20,17 @@ public class ConversorDeMoedas {
 		
 		
 		UIManager.put("OptionPane.cancelButtonText", "Cancelar");
-		
-		 entradaDeValorParaConversao = JOptionPane.showInputDialog(null,
+		 entradaDeValorParaConversao = JOptionPane.showInputDialog(frame,
 				 "Bem-vindo(a)!" + System.lineSeparator() +
 				 "Insira um valor a ser convertido: ", "Conversor de Moedas",
 				 JOptionPane.QUESTION_MESSAGE);
+		 
+		 if (entradaDeValorParaConversao == null) {
+			
+			JOptionPane.showMessageDialog(null, "Voltando ao Menu Inicial...", "Informação",
+					JOptionPane.INFORMATION_MESSAGE);
+			new ConversorMenuPrincipal();
+		}
 		 frame = new TelaJFrame();
 		 LeituraDeDados();
 
@@ -32,29 +38,27 @@ public class ConversorDeMoedas {
 
 	public void LoopLeituraDeDados() throws IOException, InterruptedException, ParseException {
 		
-		entradaDeValorParaConversao = JOptionPane.showInputDialog(null, "Insira um valor a ser convertido: ",
+		entradaDeValorParaConversao = JOptionPane.showInputDialog(frame, "Insira um valor a ser convertido: ",
 				"Conversor de Moedas", JOptionPane.QUESTION_MESSAGE);
 		
-		LeituraDeDados();
+		if (this.entradaDeValorParaConversao == null) {
+			frame.dispose();
+		} else {
+			LeituraDeDados();
+		}
 	}
-
 	public void LeituraDeDados() throws IOException, InterruptedException, ParseException {
 
 		try {
 			valorConvertidoParaDouble = Double.parseDouble(entradaDeValorParaConversao.replace(",", "."));
-			if (valorConvertidoParaDouble >= 0) {
+
+			if (valorConvertidoParaDouble > 0) {
 				ConversorDeMoedasOpcoes();
 			} else {
 				JOptionPane.showMessageDialog(null, "Informe um valor maior que zero!", "Atenção!",
 						JOptionPane.WARNING_MESSAGE);
 				LoopLeituraDeDados();
 			}
-		} 
-		catch (NullPointerException e) {
-			frame.dispose();
-			JOptionPane.showMessageDialog(null, "Voltando ao Menu Inicial...", "Informação",
-					JOptionPane.INFORMATION_MESSAGE);
-			new ConversorMenuPrincipal();
 		} 
 		catch (NumberFormatException e) {
 			JOptionPane.showMessageDialog(null,
@@ -150,6 +154,7 @@ public class ConversorDeMoedas {
 		} else if (i == JOptionPane.NO_OPTION) {
 			JOptionPane.getRootFrame().dispose();
 		} else {
+			frame.dispose();
 			JOptionPane.showMessageDialog(null, "Saindo do programa...", "Atenção", JOptionPane.WARNING_MESSAGE);
 			System.exit(0);
 		}

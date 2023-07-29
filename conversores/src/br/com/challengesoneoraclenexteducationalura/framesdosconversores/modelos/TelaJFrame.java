@@ -2,35 +2,31 @@ package br.com.challengesoneoraclenexteducationalura.framesdosconversores.modelo
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.util.ArrayList;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JList;
+import javax.swing.ListModel;
 
 public class TelaJFrame extends JFrame{
 	
+	private static final long serialVersionUID = 1L;
 	private JFrame frame;
-	private JList<?> lista;
-	private ArrayList<String> arraylist;
-	private String str;
-	private DefaultListModel mod;
+	private JList<String> lista;
+	private DefaultListModel<String> mod;
 	
 	
 	
 	
 	public void SetAdicionaItens(String string) {
-				//str = string;
-				mod.addElement(string);
-				
-		
+				mod.addElement(string);		
 	}
 	
 	public TelaJFrame() {
 		
-		mod = new DefaultListModel();
-		lista = new JList<>();
-		lista.setModel(mod);		
+		mod = new DefaultListModel<String>();
+		lista = new JList<String>();
+		lista.setModel((ListModel<String>) mod);		
 		CriaTelaJFrame();
 
 		

@@ -1,7 +1,7 @@
 package br.com.challengesoneoraclenexteducationalura.conversordemoedas.modelos;
 
 import java.text.NumberFormat;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.Locale;
 
 import javax.swing.JOptionPane;
@@ -15,7 +15,7 @@ public class ChamadaApiCotacaoDeMoedas extends ApiCotacaoDeMoedas {
 	private String dinheiroFormat;
 	private String nomeParDeMoedas;
 	private String dinheiroFormatInput;
-	private ArrayList<String> lista;
+//	private ArrayList<String> lista;
 	private double cotacao;
 
 
