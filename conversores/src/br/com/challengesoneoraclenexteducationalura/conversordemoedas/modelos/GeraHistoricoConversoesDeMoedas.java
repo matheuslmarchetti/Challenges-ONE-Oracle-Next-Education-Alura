@@ -15,7 +15,7 @@ public class GeraHistoricoConversoesDeMoedas extends ApiCotacaoDeMoedas{
 	private String nomeParDeMoedas;
 	private String dinheiroFormatInput;
 	private ArrayList<String> lista;
-	private int i;
+	private String historico;
 	
 	public GeraHistoricoConversoesDeMoedas(String moedas, String tagLanguageInput, String tagCountryInput, 
 			String tagLanguage, String tagCountry, double valor) {
@@ -41,6 +41,7 @@ public class GeraHistoricoConversoesDeMoedas extends ApiCotacaoDeMoedas{
 			lista.add(dinheiroFormatInput + " = " + dinheiroFormat + " " + nomeParDeMoedas);
 			for (int i = 0; i < lista.size(); i++) {
 				System.out.println(lista.get(i));
+				historico = lista.get(i);
 			}
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
@@ -49,7 +50,7 @@ public class GeraHistoricoConversoesDeMoedas extends ApiCotacaoDeMoedas{
 	}
 	
 	public String getGeraHistorico() {
-		return lista.get(i);
+		return this.historico;
 	}
 
 }

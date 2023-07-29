@@ -18,17 +18,12 @@ public class ConversorMenuPrincipal {
 	
 	public ConversorMenuPrincipal() throws IOException, InterruptedException, ParseException {
 		
-		//TelaJFrame frame = new TelaJFrame();
 		
 		UIManager.put("OptionPane.cancelButtonText", "Cancelar");
 		
 		Object selection = JOptionPane.showInputDialog(null, "Selecione um Conversor","Menu", 
 				JOptionPane.PLAIN_MESSAGE, 
 				null, opcoesDeConversor, opcoesDeConversor[0]);		
-		
-//		Object selection = JOptionPane.showInputDialog(null, "Selecione um Conversor","Menu", 
-//				JOptionPane.PLAIN_MESSAGE, 
-//				null, opcoesDeConversor, opcoesDeConversor[0]);	
 		
 		if (selection == opcoesDeConversor[0]) {
 			JOptionPane.showMessageDialog(null, "Selecione uma opção válida!", "Informação", 

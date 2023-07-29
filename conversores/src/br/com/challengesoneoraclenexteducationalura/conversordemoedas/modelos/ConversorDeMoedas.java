@@ -16,10 +16,11 @@ public class ConversorDeMoedas {
 	private double valorConvertidoParaDouble;
 	private String entradaDeValorParaConversao;
 	private TelaJFrame frame;
+	private GeraHistoricoConversoesDeMoedas geraHistorico;
 
 	public ConversorDeMoedas() throws IOException, InterruptedException, ParseException {
 		 
-		new TelaJFrame();
+		
 		
 		UIManager.put("OptionPane.cancelButtonText", "Cancelar");
 		
@@ -51,11 +52,13 @@ public class ConversorDeMoedas {
 						JOptionPane.WARNING_MESSAGE);
 				LoopLeituraDeDados();
 			}
-		} catch (NullPointerException e) {
-			JOptionPane.showMessageDialog(null, "Voltando ao Menu Inicial...", "Informação",
-					JOptionPane.INFORMATION_MESSAGE);
-			new ConversorMenuPrincipal();
-		} catch (NumberFormatException e) {
+		} 
+//		catch (NullPointerException e) {
+//			JOptionPane.showMessageDialog(null, "Voltando ao Menu Inicial...", "Informação",
+//					JOptionPane.INFORMATION_MESSAGE);
+//			new ConversorMenuPrincipal();
+//		} 
+		catch (NumberFormatException e) {
 			JOptionPane.showMessageDialog(null,
 					"Digite apenas números!" + System.lineSeparator() + "Não use agrupador de milhar", "Erro!",
 					JOptionPane.ERROR_MESSAGE);
@@ -85,9 +88,13 @@ public class ConversorDeMoedas {
 		if (selection == opcoesDeMoedas[0]) {
 
 			new ChamadaApiCotacaoDeMoedas("BRLUSD", "en", "US", valorConvertidoParaDouble);
-			new GeraHistoricoConversoesDeMoedas("BRLUSD", "pt", "BR", "en", "US", valorConvertidoParaDouble);
-			frame.SetAdicionaItens("2");
+			//new GeraHistoricoConversoesDeMoedas("BRLUSD", "pt", "BR", "en", "US", valorConvertidoParaDouble);
+			//frame.SetAdicionaItens(new GeraHistoricoConversoesDeMoedas("BRLUSD", "pt", "BR", "en", "US", valorConvertidoParaDouble).getGeraHistorico());
 			DesejaContinuar();
+			//new GeraHistoricoConversoesDeMoedas("BRLUSD", "pt", "BR", "en", "US", valorConvertidoParaDouble);
+			//frame.SetAdicionaItens(geraHistorico.getGeraHistorico());
+			frame.SetAdicionaItens(new GeraHistoricoConversoesDeMoedas("BRLUSD", "pt", "BR", "en", "US", valorConvertidoParaDouble).getGeraHistorico());
+			
 
 		} else if (selection == opcoesDeMoedas[1]) {
 
@@ -167,11 +174,13 @@ public class ConversorDeMoedas {
 		Object[] options = { "Sim", "Não", "Sair" };
 
 		int i = JOptionPane.showOptionDialog(null, "Deseja continuar no Conversor de Moedas?", "Menu",
-				JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+				JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
 
 		if (i == JOptionPane.YES_OPTION) {
+			//frame.SetAdicionaItens(geraHistorico.getGeraHistorico());
 			LoopLeituraDeDados();
-		} else if (i == JOptionPane.NO_OPTION) {
+		} else if (i == JOptionPane.NO_OPTION | i == 1) {
+			frame = new TelaJFrame();
 			JOptionPane.getRootFrame().dispose();
 		} else {
 			JOptionPane.showMessageDialog(null, "Saindo do programa...", "Atenção", JOptionPane.WARNING_MESSAGE);
