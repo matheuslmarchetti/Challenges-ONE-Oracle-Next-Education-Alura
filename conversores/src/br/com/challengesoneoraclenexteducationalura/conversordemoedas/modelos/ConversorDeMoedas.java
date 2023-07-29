@@ -51,11 +51,11 @@ public class ConversorDeMoedas {
 				LoopLeituraDeDados();
 			}
 		} 
-//		catch (NullPointerException e) {
-//			JOptionPane.showMessageDialog(null, "Voltando ao Menu Inicial...", "Informação",
-//					JOptionPane.INFORMATION_MESSAGE);
-//			new ConversorMenuPrincipal();
-//		} 
+		catch (NullPointerException e) {
+			JOptionPane.showMessageDialog(null, "Voltando ao Menu Inicial...", "Informação",
+					JOptionPane.INFORMATION_MESSAGE);
+			new ConversorMenuPrincipal();
+		} 
 		catch (NumberFormatException e) {
 			JOptionPane.showMessageDialog(null,
 					"Digite apenas números!" + System.lineSeparator() + "Não use agrupador de milhar", "Erro!",
@@ -86,11 +86,7 @@ public class ConversorDeMoedas {
 		if (selection == opcoesDeMoedas[0]) {
 
 			new ChamadaApiCotacaoDeMoedas("BRLUSD", "en", "US", valorConvertidoParaDouble);
-			//new GeraHistoricoConversoesDeMoedas("BRLUSD", "pt", "BR", "en", "US", valorConvertidoParaDouble);
-			//frame.SetAdicionaItens(new GeraHistoricoConversoesDeMoedas("BRLUSD", "pt", "BR", "en", "US", valorConvertidoParaDouble).getGeraHistorico());
 			DesejaContinuar();
-			//new GeraHistoricoConversoesDeMoedas("BRLUSD", "pt", "BR", "en", "US", valorConvertidoParaDouble);
-			//frame.SetAdicionaItens(geraHistorico.getGeraHistorico());
 			frame.SetAdicionaItens(new GeraHistoricoConversoesDeMoedas("BRLUSD", "pt", "BR", "en", "US", valorConvertidoParaDouble).getGeraHistorico());
 			
 
@@ -176,7 +172,6 @@ public class ConversorDeMoedas {
 
 		if (i == JOptionPane.YES_OPTION) {
 			LoopLeituraDeDados();
-			//frame = new TelaJFrame();
 		} else if (i == JOptionPane.NO_OPTION | i == 1) {
 			frame = new TelaJFrame();
 			JOptionPane.getRootFrame().dispose();
