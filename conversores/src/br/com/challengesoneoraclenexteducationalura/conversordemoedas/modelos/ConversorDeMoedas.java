@@ -19,8 +19,6 @@ public class ConversorDeMoedas {
 	private GeraHistoricoConversoesDeMoedas geraHistorico;
 
 	public ConversorDeMoedas() throws IOException, InterruptedException, ParseException {
-		 
-		
 		
 		UIManager.put("OptionPane.cancelButtonText", "Cancelar");
 		
@@ -177,8 +175,8 @@ public class ConversorDeMoedas {
 				JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
 
 		if (i == JOptionPane.YES_OPTION) {
-			//frame.SetAdicionaItens(geraHistorico.getGeraHistorico());
 			LoopLeituraDeDados();
+			//frame = new TelaJFrame();
 		} else if (i == JOptionPane.NO_OPTION | i == 1) {
 			frame = new TelaJFrame();
 			JOptionPane.getRootFrame().dispose();

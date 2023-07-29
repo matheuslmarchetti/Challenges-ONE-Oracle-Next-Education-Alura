@@ -15,20 +15,34 @@ public class TelaJFrame extends JFrame{
 	private JTextField textField;
 	private JList<?> lista;
 	private ArrayList<String> arraylist;
+	private String str;
+	
+	
 	
 	
 	public void SetAdicionaItens(String string) {
-		String[] historico = {};
-		lista = new JList<>(historico);
-		textField = new JTextField();
+		//String[] historico = {};
+		//lista = new JList<>(historico);
+		
+		
 		textField.setText(string);
-//		arraylist = new ArrayList<String>();
-//		arraylist.add(string);
-//		for (int i = 0; i < arraylist.size(); i++) {
-//			textField.setText(arraylist.get(i));
-//		}
+		arraylist = new ArrayList<String>();
+		arraylist.add(string);	
+		for (int i = 0; i < arraylist.size(); i++) {
+			str = arraylist.get(i);
+		}
+		
+		
+		//frame.add(BorderLayout.WEST, lista);
+	}
+	
+	public TelaJFrame() {
+		textField = new JTextField();
+		
+		
 		CriaTelaJFrame();
-		frame.add(BorderLayout.WEST, lista);
+		
+		System.out.println(str);
 	}
 	
 	private void  CriaTelaJFrame() {
@@ -43,9 +57,11 @@ public class TelaJFrame extends JFrame{
     	frame.setResizable(false);
     	frame.setSize(600,600);      //set the size
     	frame.setLocationRelativeTo(null);// center frame
+    	 
 		
 	}
 	
+
 	
 	
 }
