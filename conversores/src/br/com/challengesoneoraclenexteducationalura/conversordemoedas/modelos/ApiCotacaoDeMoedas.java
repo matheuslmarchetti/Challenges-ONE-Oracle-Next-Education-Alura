@@ -9,6 +9,8 @@ import java.net.http.HttpClient.Redirect;
 import java.net.http.HttpResponse.BodyHandlers;
 import java.time.Duration;
 
+import javax.swing.JOptionPane;
+
 
 public class ApiCotacaoDeMoedas{
 	
@@ -18,18 +20,20 @@ public class ApiCotacaoDeMoedas{
 		HttpRequest request = HttpRequest.newBuilder().GET()
 				.uri(URI.create("http://economia.awesomeapi.com.br/json/last/BRL-USD,BRL-EUR,BRL-GBP,"
 						+ "USD-BRL,USD-EUR,USD-GBP,EUR-BRL,EUR-USD,EUR-GBP,GBP-BRL,GBP-USD,GBP-EUR"))
-				.timeout(Duration.ofSeconds(5)).build();
-		HttpClient httpClient = HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(5))
+				.timeout(Duration.ofSeconds(30)).build();
+		HttpClient httpClient = HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(30))
 				.followRedirects(Redirect.NORMAL).build();
 		//HttpResponse<String> response = null;
 		try {
 			response = httpClient.send(request, BodyHandlers.ofString());
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Falha de Conexão!");
+			JOptionPane.showMessageDialog(null, "Falha de Conexão! Verifique sua internet.", "Erro", 
+					JOptionPane.ERROR_MESSAGE);
+			//e.printStackTrace();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Falha de Interrupção!");
+			//e.printStackTrace();
 		}		
 	}
 

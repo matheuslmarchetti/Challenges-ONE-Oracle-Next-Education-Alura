@@ -1,19 +1,25 @@
 package br.com.challengesoneoraclenexteducationalura.conversordemoedas.modelos;
 
 import java.io.IOException;
+
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 import org.json.simple.parser.ParseException;
 
 import br.com.challengesoneoraclenexteducationalura.framesdosconversores.modelos.ConversorMenuPrincipal;
+import br.com.challengesoneoraclenexteducationalura.framesdosconversores.modelos.TelaJFrame;
 
 public class ConversorDeMoedas {
 
 	private double valorConvertidoParaDouble;
 	private String entradaDeValorParaConversao;
+	private TelaJFrame frame;
 
 	public ConversorDeMoedas() throws IOException, InterruptedException, ParseException {
+		 
+		new TelaJFrame();
 		
 		UIManager.put("OptionPane.cancelButtonText", "Cancelar");
 		
@@ -80,6 +86,7 @@ public class ConversorDeMoedas {
 
 			new ChamadaApiCotacaoDeMoedas("BRLUSD", "en", "US", valorConvertidoParaDouble);
 			new GeraHistoricoConversoesDeMoedas("BRLUSD", "pt", "BR", "en", "US", valorConvertidoParaDouble);
+			frame.SetAdicionaItens("2");
 			DesejaContinuar();
 
 		} else if (selection == opcoesDeMoedas[1]) {
@@ -165,7 +172,7 @@ public class ConversorDeMoedas {
 		if (i == JOptionPane.YES_OPTION) {
 			LoopLeituraDeDados();
 		} else if (i == JOptionPane.NO_OPTION) {
-			new ConversorMenuPrincipal();
+			JOptionPane.getRootFrame().dispose();
 		} else {
 			JOptionPane.showMessageDialog(null, "Saindo do programa...", "Atenção", JOptionPane.WARNING_MESSAGE);
 			System.exit(0);
