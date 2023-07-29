@@ -2,7 +2,6 @@ package br.com.challengesoneoraclenexteducationalura.conversordemoedas.modelos;
 
 import java.io.IOException;
 
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
@@ -16,9 +15,9 @@ public class ConversorDeMoedas {
 	private double valorConvertidoParaDouble;
 	private String entradaDeValorParaConversao;
 	private TelaJFrame frame;
-	private GeraHistoricoConversoesDeMoedas geraHistorico;
-
+	
 	public ConversorDeMoedas() throws IOException, InterruptedException, ParseException {
+		
 		
 		UIManager.put("OptionPane.cancelButtonText", "Cancelar");
 		
@@ -26,7 +25,7 @@ public class ConversorDeMoedas {
 				 "Bem-vindo(a)!" + System.lineSeparator() +
 				 "Insira um valor a ser convertido: ", "Conversor de Moedas",
 				 JOptionPane.QUESTION_MESSAGE);
-		 
+		 frame = new TelaJFrame();
 		 LeituraDeDados();
 
 	}
@@ -52,6 +51,7 @@ public class ConversorDeMoedas {
 			}
 		} 
 		catch (NullPointerException e) {
+			frame.dispose();
 			JOptionPane.showMessageDialog(null, "Voltando ao Menu Inicial...", "Informação",
 					JOptionPane.INFORMATION_MESSAGE);
 			new ConversorMenuPrincipal();
@@ -82,78 +82,53 @@ public class ConversorDeMoedas {
 
 		Object selection = JOptionPane.showInputDialog(null, "Selecione a moeda de conversão", "Moedas",
 				JOptionPane.PLAIN_MESSAGE, null, opcoesDeMoedas, opcoesDeMoedas[0]);
-
+		
 		if (selection == opcoesDeMoedas[0]) {
-
-			new ChamadaApiCotacaoDeMoedas("BRLUSD", "en", "US", valorConvertidoParaDouble);
+			frame.SetAdicionaItens((new ChamadaApiCotacaoDeMoedas("BRLUSD", "pt", "BR", "en", "US", valorConvertidoParaDouble).getGeraHistorico()));
 			DesejaContinuar();
-			frame.SetAdicionaItens(new GeraHistoricoConversoesDeMoedas("BRLUSD", "pt", "BR", "en", "US", valorConvertidoParaDouble).getGeraHistorico());
-			
 
 		} else if (selection == opcoesDeMoedas[1]) {
-
-			new ChamadaApiCotacaoDeMoedas("BRLEUR", "fr", "FR", valorConvertidoParaDouble);
-			new GeraHistoricoConversoesDeMoedas("BRLEUR", "pt", "BR", "fr", "FR", valorConvertidoParaDouble);
+			frame.SetAdicionaItens(new ChamadaApiCotacaoDeMoedas("BRLEUR", "pt", "BR", "fr", "FR", valorConvertidoParaDouble).getGeraHistorico());
 			DesejaContinuar();
 
 		} else if (selection == opcoesDeMoedas[2]) {
-
-			new ChamadaApiCotacaoDeMoedas("BRLGBP", "en", "GB", valorConvertidoParaDouble);
-			new GeraHistoricoConversoesDeMoedas("BRLGBP", "pt", "BR", "en", "GB", valorConvertidoParaDouble);
+			frame.SetAdicionaItens(new ChamadaApiCotacaoDeMoedas("BRLGBP", "pt", "BR", "en", "GB", valorConvertidoParaDouble).getGeraHistorico());
 			DesejaContinuar();
 
 		} else if (selection == opcoesDeMoedas[3]) {
-
-			new ChamadaApiCotacaoDeMoedas("USDBRL", "pt", "BR", valorConvertidoParaDouble);
-			new GeraHistoricoConversoesDeMoedas("USDBRL", "en", "US", "pt", "BR", valorConvertidoParaDouble);
+			frame.SetAdicionaItens(new ChamadaApiCotacaoDeMoedas("USDBRL", "en", "US", "pt", "BR", valorConvertidoParaDouble).getGeraHistorico());
 			DesejaContinuar();
 
 		} else if (selection == opcoesDeMoedas[4]) {
-
-			new ChamadaApiCotacaoDeMoedas("USDEUR", "fr", "FR", valorConvertidoParaDouble);
-			new GeraHistoricoConversoesDeMoedas("USDEUR", "en", "US", "fr", "FR", valorConvertidoParaDouble);
+			frame.SetAdicionaItens(new ChamadaApiCotacaoDeMoedas("USDEUR", "en", "US", "fr", "FR", valorConvertidoParaDouble).getGeraHistorico());
 			DesejaContinuar();
 
 		} else if (selection == opcoesDeMoedas[5]) {
-
-			new ChamadaApiCotacaoDeMoedas("USDGBP", "en", "GB", valorConvertidoParaDouble);
-			new GeraHistoricoConversoesDeMoedas("USDGBP", "en", "US", "en", "GB", valorConvertidoParaDouble);
+			frame.SetAdicionaItens(new ChamadaApiCotacaoDeMoedas("USDGBP", "en", "US", "en", "GB", valorConvertidoParaDouble).getGeraHistorico());
 			DesejaContinuar();
 
 		} else if (selection == opcoesDeMoedas[6]) {
-
-			new ChamadaApiCotacaoDeMoedas("EURBRL", "pt", "BR", valorConvertidoParaDouble);
-			new GeraHistoricoConversoesDeMoedas("EURBRL", "fr", "FR", "pt", "BR", valorConvertidoParaDouble);
+			frame.SetAdicionaItens(new ChamadaApiCotacaoDeMoedas("EURBRL", "fr", "FR", "pt", "BR", valorConvertidoParaDouble).getGeraHistorico());
 			DesejaContinuar();
 
 		} else if (selection == opcoesDeMoedas[7]) {
-
-			new ChamadaApiCotacaoDeMoedas("EURUSD", "en", "US", valorConvertidoParaDouble);
-			new GeraHistoricoConversoesDeMoedas("EURUSD", "fr", "FR", "en", "US", valorConvertidoParaDouble);
+			frame.SetAdicionaItens(new ChamadaApiCotacaoDeMoedas("EURUSD", "fr", "FR", "en", "US", valorConvertidoParaDouble).getGeraHistorico());
 			DesejaContinuar();
 
 		} else if (selection == opcoesDeMoedas[8]) {
-
-			new ChamadaApiCotacaoDeMoedas("EURGBP", "en", "GB", valorConvertidoParaDouble);
-			new GeraHistoricoConversoesDeMoedas("EURGBP", "fr", "FR", "en", "GB", valorConvertidoParaDouble);
+			frame.SetAdicionaItens(new ChamadaApiCotacaoDeMoedas("EURGBP", "fr", "FR", "en", "GB", valorConvertidoParaDouble).getGeraHistorico());
 			DesejaContinuar();
 
 		} else if (selection == opcoesDeMoedas[9]) {
-
-			new ChamadaApiCotacaoDeMoedas("GBPBRL", "pt", "BR", valorConvertidoParaDouble);
-			new GeraHistoricoConversoesDeMoedas("GBPBRL", "en", "GB", "pt", "BR", valorConvertidoParaDouble);
+			frame.SetAdicionaItens(new ChamadaApiCotacaoDeMoedas("GBPBRL", "en", "GB", "pt", "BR", valorConvertidoParaDouble).getGeraHistorico());
 			DesejaContinuar();
 
 		} else if (selection == opcoesDeMoedas[10]) {
-
-			new ChamadaApiCotacaoDeMoedas("GBPUSD", "en", "US", valorConvertidoParaDouble);
-			new GeraHistoricoConversoesDeMoedas("GBPUSD", "en", "GB", "en", "US", valorConvertidoParaDouble);
+			frame.SetAdicionaItens(new ChamadaApiCotacaoDeMoedas("GBPUSD", "en", "GB", "en", "US", valorConvertidoParaDouble).getGeraHistorico());
 			DesejaContinuar();
 
 		} else if (selection == opcoesDeMoedas[11]) {
-
-			new ChamadaApiCotacaoDeMoedas("GBPEUR", "fr", "FR", valorConvertidoParaDouble);
-			new GeraHistoricoConversoesDeMoedas("GBPEUR", "en", "GB", "fr", "FR", valorConvertidoParaDouble);
+			frame.SetAdicionaItens(new ChamadaApiCotacaoDeMoedas("GBPEUR", "en", "GB", "fr", "FR", valorConvertidoParaDouble).getGeraHistorico());
 			DesejaContinuar();
 
 		} else {
@@ -172,8 +147,7 @@ public class ConversorDeMoedas {
 
 		if (i == JOptionPane.YES_OPTION) {
 			LoopLeituraDeDados();
-		} else if (i == JOptionPane.NO_OPTION | i == 1) {
-			frame = new TelaJFrame();
+		} else if (i == JOptionPane.NO_OPTION) {
 			JOptionPane.getRootFrame().dispose();
 		} else {
 			JOptionPane.showMessageDialog(null, "Saindo do programa...", "Atenção", JOptionPane.WARNING_MESSAGE);
