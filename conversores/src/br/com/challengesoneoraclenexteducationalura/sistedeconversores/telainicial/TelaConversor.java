@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.SwingConstants;
+
 import org.json.simple.parser.ParseException;
 
 import br.com.challengesoneoraclenexteducationalura.framesdosconversores.modelos.ConversorMenuPrincipal;
@@ -20,7 +22,7 @@ public class TelaConversor {
 	public static void main(String[] args) throws IOException, InterruptedException, ParseException {
 		
 		frame = new JFrame("Sistema de Conversores");    //creat new frame
-		//frame.getContentPane().setBackground(Color.gray);
+		frame.getContentPane().setBackground(Color.gray);
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     	frame.setVisible(true);       //make it visible
     	frame.setResizable(false);
@@ -28,7 +30,9 @@ public class TelaConversor {
     	frame.setLocationRelativeTo(null);// center frame
 		
     	JLabel labelBemVindo = new JLabel("Bem-vindo(a) ao Sistema de Conversores");
-		labelBemVindo.setBounds(100, 100, 500, 70);
+		//labelBemVindo.setBounds(100, 100, 500, 70);
+    	labelBemVindo.setHorizontalAlignment(SwingConstants.CENTER);
+    	labelBemVindo.setVerticalAlignment(SwingConstants.CENTER);
 		labelBemVindo.setFont(new Font("Arial", Font.BOLD, 16));
 		frame.add(labelBemVindo);
 		
