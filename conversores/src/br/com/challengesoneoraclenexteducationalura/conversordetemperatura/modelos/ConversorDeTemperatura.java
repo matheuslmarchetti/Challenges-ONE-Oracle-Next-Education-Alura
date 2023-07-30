@@ -81,27 +81,39 @@ public class ConversorDeTemperatura {
 				JOptionPane.PLAIN_MESSAGE, null, opcoesDeTemperatura, opcoesDeTemperatura[0]);
 		
 		if (selection == opcoesDeTemperatura[0]) {
-			//frame.set(new formula("Grau Celsius", "Grau Fahrenheit", valorConvertidoParaDouble).getGeraHistorico());
+			frame.SetAdicionaItens(new FuncaoEscalaTermometrica
+					("Celsius", "Fahrenheit", valorConvertidoParaDouble)
+					.getGeraHistorico("\u00b0C", "\u00b0F", "Celsius", "Fahrenheit"));
 			DesejaContinuar();
 
 		} else if (selection == opcoesDeTemperatura[1]) {
-			//frame.set(new formula("Grau Celsius", "Grau Fahrenheit", valorConvertidoParaDouble).getGeraHistorico());
+			frame.SetAdicionaItens(new FuncaoEscalaTermometrica
+					("Celsius", "Kelvin", valorConvertidoParaDouble)
+					.getGeraHistorico("\u00b0C", "K", "Celsius", "Kelvin"));
 			DesejaContinuar();
 
 		} else if (selection == opcoesDeTemperatura[2]) {
-			//frame.set(new formula("Grau Celsius", "Grau Fahrenheit", valorConvertidoParaDouble).getGeraHistorico());
+			frame.SetAdicionaItens(new FuncaoEscalaTermometrica
+					("Fahrenheit", "Celsius", valorConvertidoParaDouble)
+					.getGeraHistorico("\u00b0F", "\u00b0C", "Fahrenheit", "Celsius"));
 			DesejaContinuar();
 
 		} else if (selection == opcoesDeTemperatura[3]) {
-			//frame.set(new formula("Grau Celsius", "Grau Fahrenheit", valorConvertidoParaDouble).getGeraHistorico());
+			frame.SetAdicionaItens(new FuncaoEscalaTermometrica
+					("Fahrenheit", "Kelvin", valorConvertidoParaDouble)
+					.getGeraHistorico("\u00b0F", "K", "Fahrenheit", "Kelvin"));
 			DesejaContinuar();
 
 		} else if (selection == opcoesDeTemperatura[4]) {
-			//frame.set(new formula("Grau Celsius", "Grau Fahrenheit", valorConvertidoParaDouble).getGeraHistorico());
+			frame.SetAdicionaItens(new FuncaoEscalaTermometrica
+					("Kelvin", "Celsius", valorConvertidoParaDouble)
+					.getGeraHistorico("K", "\u00b0C", "Kelvin", "Celsius"));
 			DesejaContinuar();
 
 		} else if (selection == opcoesDeTemperatura[5]) {
-			//frame.set(new formula("Grau Celsius", "Grau Fahrenheit", valorConvertidoParaDouble).getGeraHistorico());
+			frame.SetAdicionaItens(new FuncaoEscalaTermometrica
+					("Kelvin", "Fahrenheit", valorConvertidoParaDouble)
+					.getGeraHistorico("K", "\u00b0F", "Kelvin", "Fahrenheit"));
 			DesejaContinuar();
 
 		} else {
