@@ -51,10 +51,10 @@ public class ConversorDeTemperatura {
 		try {
 			valorConvertidoParaDouble = Double.parseDouble(entradaDeValorParaConversao.replace(",", "."));
 
-			if (valorConvertidoParaDouble > 0) {
+			if (valorConvertidoParaDouble < 0 |valorConvertidoParaDouble > 0) {
 				ConversorDeTemperaturaOpcoes();
 			} else {
-				JOptionPane.showMessageDialog(null, "Informe um valor maior que zero!", "Atenção!",
+				JOptionPane.showMessageDialog(null, "Informe um valor válido", "Atenção!",
 						JOptionPane.WARNING_MESSAGE);
 				LoopLeituraDeDados();
 			}
