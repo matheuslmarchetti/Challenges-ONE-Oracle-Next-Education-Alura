@@ -61,7 +61,8 @@ public class ConversorDeTemperatura {
 		} 
 		catch (NumberFormatException e) {
 			JOptionPane.showMessageDialog(null,
-					"Digite apenas números!" + System.lineSeparator() + "Não use agrupador de milhar", "Erro!",
+					"Digite apenas números!" + System.lineSeparator() + "Não use agrupador de milhar" 
+			+ System.lineSeparator() + "Use ponto ou vírgula como separador decimal", "Erro!",
 					JOptionPane.ERROR_MESSAGE);
 			LoopLeituraDeDados();
 		}
@@ -83,37 +84,37 @@ public class ConversorDeTemperatura {
 		if (selection == opcoesDeTemperatura[0]) {
 			frame.SetAdicionaItens(new FuncaoEscalaTermometrica
 					("Celsius", "Fahrenheit", valorConvertidoParaDouble)
-					.getGeraHistorico("\u00b0C", "\u00b0F", "Celsius", "Fahrenheit"));
+					.getGeraHistorico("\u00b0C", "\u00b0F", "Grau Celsius", "Grau Fahrenheit"));
 			DesejaContinuar();
 
 		} else if (selection == opcoesDeTemperatura[1]) {
 			frame.SetAdicionaItens(new FuncaoEscalaTermometrica
 					("Celsius", "Kelvin", valorConvertidoParaDouble)
-					.getGeraHistorico("\u00b0C", "K", "Celsius", "Kelvin"));
+					.getGeraHistorico("\u00b0C", "K", "Grau Celsius", "Kelvin"));
 			DesejaContinuar();
 
 		} else if (selection == opcoesDeTemperatura[2]) {
 			frame.SetAdicionaItens(new FuncaoEscalaTermometrica
 					("Fahrenheit", "Celsius", valorConvertidoParaDouble)
-					.getGeraHistorico("\u00b0F", "\u00b0C", "Fahrenheit", "Celsius"));
+					.getGeraHistorico("\u00b0F", "\u00b0C", "Grau Fahrenheit", "Grau Celsius"));
 			DesejaContinuar();
 
 		} else if (selection == opcoesDeTemperatura[3]) {
 			frame.SetAdicionaItens(new FuncaoEscalaTermometrica
 					("Fahrenheit", "Kelvin", valorConvertidoParaDouble)
-					.getGeraHistorico("\u00b0F", "K", "Fahrenheit", "Kelvin"));
+					.getGeraHistorico("\u00b0F", "K", "Grau Fahrenheit", "Kelvin"));
 			DesejaContinuar();
 
 		} else if (selection == opcoesDeTemperatura[4]) {
 			frame.SetAdicionaItens(new FuncaoEscalaTermometrica
 					("Kelvin", "Celsius", valorConvertidoParaDouble)
-					.getGeraHistorico("K", "\u00b0C", "Kelvin", "Celsius"));
+					.getGeraHistorico("K", "\u00b0C", "Kelvin", "Grau Celsius"));
 			DesejaContinuar();
 
 		} else if (selection == opcoesDeTemperatura[5]) {
 			frame.SetAdicionaItens(new FuncaoEscalaTermometrica
 					("Kelvin", "Fahrenheit", valorConvertidoParaDouble)
-					.getGeraHistorico("K", "\u00b0F", "Kelvin", "Fahrenheit"));
+					.getGeraHistorico("K", "\u00b0F", "Kelvin", "Grau Fahrenheit"));
 			DesejaContinuar();
 
 		} else {

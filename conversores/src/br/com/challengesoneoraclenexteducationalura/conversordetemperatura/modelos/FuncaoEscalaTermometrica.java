@@ -1,23 +1,29 @@
 package br.com.challengesoneoraclenexteducationalura.conversordetemperatura.modelos;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 import javax.swing.JOptionPane;
 
 public class FuncaoEscalaTermometrica {
-private double resultadoConversao;
+private String resultadoConversao;
 private double valorInputTemperatura;
 private String erro;
+private Locale localeBR = new Locale("pt","BR");
+private NumberFormat numberFormat = NumberFormat.getNumberInstance(localeBR);
 
 	public FuncaoEscalaTermometrica(String escalaAtual, String escalaParaConversao, double valordaTemperatura) {
 		valorInputTemperatura = valordaTemperatura;
 		switch (escalaAtual) {
 		case "Celsius":
 			if (escalaParaConversao == "Fahrenheit") {
-				resultadoConversao = (valorInputTemperatura * 1.8) + 32;
+				resultadoConversao = numberFormat.format((valorInputTemperatura * 1.8) + 32);
 				JOptionPane.showMessageDialog(null,
 						"A temperatura convertida equivale a: " + resultadoConversao + "\u00b0F",
 						"Resultado", JOptionPane.INFORMATION_MESSAGE);
 			} else if (escalaParaConversao == "Kelvin") {
-				resultadoConversao = valorInputTemperatura + 273.15;
+				NumberFormat numberFormat = NumberFormat.getNumberInstance(localeBR);
+				resultadoConversao = numberFormat.format(valorInputTemperatura + 273.15);
 				JOptionPane.showMessageDialog(null,
 						"A temperatura convertida equivale a: " + resultadoConversao + "K",
 						"Resultado", JOptionPane.INFORMATION_MESSAGE);
@@ -31,12 +37,14 @@ private String erro;
 			
 		case "Fahrenheit":
 			if (escalaParaConversao == "Celsius") {
-				resultadoConversao = (valorInputTemperatura - 32) / 1.8;
+				resultadoConversao = numberFormat.format((valorInputTemperatura - 32) / 1.8);
 				JOptionPane.showMessageDialog(null,
 						"A temperatura convertida equivale a: " + resultadoConversao + "\u00b0C",
 						"Resultado", JOptionPane.INFORMATION_MESSAGE);
 			} else if (escalaParaConversao == "Kelvin") {
-				resultadoConversao = (valorInputTemperatura - 32) * 5/9 + 273.15;
+				Locale localeBR = new Locale("pt","BR");
+				NumberFormat numberFormat = NumberFormat.getNumberInstance(localeBR);
+				resultadoConversao = numberFormat.format((valorInputTemperatura - 32) * 5/9 + 273.15);
 				JOptionPane.showMessageDialog(null,
 						"A temperatura convertida equivale a: " + resultadoConversao + "K",
 						"Resultado", JOptionPane.INFORMATION_MESSAGE);
@@ -50,12 +58,12 @@ private String erro;
 			
 		case "Kelvin":
 			if (escalaParaConversao == "Celsius") {
-				resultadoConversao = valorInputTemperatura - 273.15;
+				resultadoConversao = numberFormat.format(valorInputTemperatura - 273.15);
 				JOptionPane.showMessageDialog(null,
 						"A temperatura convertida equivale a: " + resultadoConversao + "\u00b0C",
 						"Resultado", JOptionPane.INFORMATION_MESSAGE);
 			} else if (escalaParaConversao == "Fahrenheit") {
-				resultadoConversao = ((valorInputTemperatura - 273.15) * 1.8) + 32;
+				resultadoConversao = numberFormat.format(((valorInputTemperatura - 273.15) * 1.8) + 32);
 				JOptionPane.showMessageDialog(null,
 						"A temperatura convertida equivale a: " + resultadoConversao + "\u00b0F",
 						"Resultado", JOptionPane.INFORMATION_MESSAGE);
@@ -78,7 +86,8 @@ private String erro;
 	
 	public String getGeraHistorico(String simboloTemperaturaAtual, String simboloTemperaturaConvertido, 
 			String escalaAtual, String escalaParaConversao ) {
-		return this.valorInputTemperatura + simboloTemperaturaAtual + " = "
+		String valorInputTemperaturaFormat = numberFormat.format(valorInputTemperatura);
+		return valorInputTemperaturaFormat + simboloTemperaturaAtual + " = "
 			+ this.resultadoConversao + simboloTemperaturaConvertido + " - "
 				+ escalaAtual + " | " + escalaParaConversao;
 	}
