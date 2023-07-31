@@ -22,7 +22,6 @@ private NumberFormat numberFormat = NumberFormat.getNumberInstance(localeBR);
 						"A temperatura convertida equivale a: " + resultadoConversao + "\u00b0F",
 						"Resultado", JOptionPane.INFORMATION_MESSAGE);
 			} else if (escalaParaConversao == "Kelvin") {
-				NumberFormat numberFormat = NumberFormat.getNumberInstance(localeBR);
 				resultadoConversao = numberFormat.format(valorInputTemperatura + 273.15);
 				JOptionPane.showMessageDialog(null,
 						"A temperatura convertida equivale a: " + resultadoConversao + "K",
@@ -42,8 +41,6 @@ private NumberFormat numberFormat = NumberFormat.getNumberInstance(localeBR);
 						"A temperatura convertida equivale a: " + resultadoConversao + "\u00b0C",
 						"Resultado", JOptionPane.INFORMATION_MESSAGE);
 			} else if (escalaParaConversao == "Kelvin") {
-				Locale localeBR = new Locale("pt","BR");
-				NumberFormat numberFormat = NumberFormat.getNumberInstance(localeBR);
 				resultadoConversao = numberFormat.format((valorInputTemperatura - 32) * 5/9 + 273.15);
 				JOptionPane.showMessageDialog(null,
 						"A temperatura convertida equivale a: " + resultadoConversao + "K",
