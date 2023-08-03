@@ -54,57 +54,40 @@
 
 Liste todas as dependências e libs que o usuário deve ter instalado na máquina antes de rodar a aplicação
 
-- [React](https://pt-br.reactjs.org/docs/create-a-new-react-app.html)
-- [React PDF](https://react-pdf.org/)
-
-...
-
-Liste as tecnologias utilizadas no projeto que **não** forem reconhecidas pelo Github 
+- [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
+- [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [JavaScript ES6](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 <p align="right">(<a href="#readme-top">Voltar ao topo</a>)</p>
 
 ## Começando
 
-Este é um exemplo de como você pode dar instruções sobre como configurar seu projeto localmente. Para colocar uma cópia local em funcionamento, siga estas etapas de exemplo simples.
+Para colocar uma cópia local em funcionamento e/ou fazer edições ao projeto, siga as etapas abaixo.
 
 ### Pré-requisitos
 
-Este é um exemplo de como listar as coisas que você precisa para usar o software e como instalá-las.
+Lista de ferramentas que precisam ser instaladas.
 
-- npm
-  
-  ```
-  npm install npm@latest -g
-  ```
+- [Git](https://git-scm.com/)
 
-- [Node](https://nodejs.org/en/download/)
+- [VS Code](https://code.visualstudio.com/)
+
+- [Live Server - Extensão para Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
 ### Instalação
 
-Abaixo está um exemplo de como você pode instruir seu público sobre como instalar e configurar seu aplicativo. Este modelo não depende de nenhuma dependência ou serviço externo.
-
-1. Obtenha uma chave de API gratuita em https://example.com
+1. Faça o download da lista de ferramentas dos Pré-Quisitos
 
 2. Clonar o repositório
    
    ```
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/matheuslmarchetti/Challenges-ONE-Oracle-Next-Education-Alura.git
    ```
 
-3. Instalar pacotes NPM
-   
-   ```
-   npm install
-   ```
+3. Excluir diretório "conversores" caso queira trabalhar apenas o projeto do Decodificador de Texto
 
-4. Insira sua API emconfig.js
-   
-   ```
-   const API_KEY = 'ENTER YOUR API';
-   ```
-   
-   #### Acesso ao projeto
-   
+#### Acesso ao projeto
+
    Você pode [acessar o código fonte do projeto](https://github.com/matheuslmarchetti/Challenges-ONE-Oracle-Next-Education-Alura/tree/main/decodificador-de-texto) ou [baixá-lo](https://github.com/matheuslmarchetti/Challenges-ONE-Oracle-Next-Education-Alura/archive/refs/heads/main.zip).
 
 ### Deploy
