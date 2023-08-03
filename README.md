@@ -4,8 +4,8 @@
 
 ### Clique em um projeto a abaixo para acessar sua documentação.
 
-- Decodificador de Texto(#decodificador-de-texto)
-- Conversores(#conversores)
+- [*Decodificador de Texto*](#decodificador-de-texto)
+- [*Conversores*](#conversores)
 
 # Decodificador de Texto
 
