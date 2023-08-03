@@ -4,8 +4,8 @@
 
 ### Clique em um projeto a abaixo para acessar sua documentação.
 
-- *Decodificador de Texto(#decodificador-de-texto)*
-- *Conversores(#conversores)*
+- Decodificador de Texto(#decodificador-de-texto)
+- Conversores(#conversores)
 
 # Decodificador de Texto
 
@@ -76,6 +76,7 @@ Este é um exemplo de como listar as coisas que você precisa para usar o softwa
   ```
   npm install npm@latest -g
   ```
+
 - [Node](https://nodejs.org/en/download/)
 
 ### Instalação
