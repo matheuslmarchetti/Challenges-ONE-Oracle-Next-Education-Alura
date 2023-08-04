@@ -98,9 +98,9 @@ Lista de ferramentas que precisam ser instaladas.
 
 ## Uso
 
-Explique com mais detalhes como a sua aplicação poderia ser utilizada. O uso de **gifs** aqui seria bem interessante.
+![Decodificador de Texto Uso][decodificadordetextouse]
 
-![alt text][3]
+<p align="right">(<a href="#readme-top">Voltar ao topo</a>)</p>
 
 ## Licença
 
@@ -129,8 +129,6 @@ Obrigado a todos os professores, instrutores e demais membros da equipe da forma
 
 [capadecodificadordetexto]: https://github.com/matheuslmarchetti/Challenges-ONE-Oracle-Next-Education-Alura/blob/main/files-for-readme/decodificadordetextoprojectcover.png?raw=true "Capa do Decodificador de Texto"
 
-[2]: https://media.giphy.com/media/A06UFEx8jxEwU/giphy.gif "Gif"
-
-[3]: https://media.giphy.com/media/VbDqmJbxaeYCoM92Ow/giphy.gif "Gif"
+[decodificadordetextouse]: https://github.com/matheuslmarchetti/Challenges-ONE-Oracle-Next-Education-Alura/blob/main/files-for-readme/decodificadordetextouse.gif?raw=true "Decodificador de Texto Uso"
 
 # Conversores
