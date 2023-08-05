@@ -6,7 +6,7 @@
 
 ### [Decodificador de Texto - Preview](-decodificador-de-texto)
 
-### [Conversores - Preview](-conversores)
+### [Conversores - Preview](https://github.com/matheuslmarchetti/Challenges-ONE-Oracle-Next-Education-Alura/edit/main/README.md-conversores)
 
 ***
 
