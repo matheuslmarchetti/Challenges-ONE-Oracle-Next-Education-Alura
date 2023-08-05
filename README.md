@@ -4,7 +4,7 @@
 
 ### Clique em um projeto a abaixo para acessar sua documentação.
 
-- [*Decodificador de Texto*](#decodificador-de-texto)
+- [*Decodificador de Texto*](https://github.com/matheuslmarchetti/Challenges-ONE-Oracle-Next-Education-Alura/tree/main/decodificador-de-texto)
 - [*Conversores*](#conversores)
 
 # Decodificador de Texto

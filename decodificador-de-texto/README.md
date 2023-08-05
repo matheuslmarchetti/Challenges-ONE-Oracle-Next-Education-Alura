@@ -4,6 +4,8 @@
 
 ## Índice <a name="readme-top"></a>
 
+- [Voltar ao menu principal](https://github.com/matheuslmarchetti/Challenges-ONE-Oracle-Next-Education-Alura)
+
 - [Sobre o projeto](#sobre-o-projeto)
   
   - [Descrição do projeto](#descrição-do-projeto)
@@ -98,7 +100,8 @@ Copyright :copyright: 2023 - Decodificador de Texto
 
 Responsável pelo desenvolvimento do projeto
 
-[![](https://avatars.githubusercontent.com/u/105798967?v=4)<br><sub>Matheus L. Marchetti</sub>](https://github.com/matheuslmarchetti)
+| [<img src="https://avatars.githubusercontent.com/u/105798967?v=4" width=115><br><sub>Matheus L. Marchetti</sub>](https://github.com/matheuslmarchetti) |
+|:------------------------------------------------------------------------------------------------------------------------------------------------------:|
 
 <p align="right">(<a href="#readme-top">Voltar ao topo</a>)</p>
 
