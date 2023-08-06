@@ -38,4 +38,4 @@
 
 [decodificadordetextouse]: https://github.com/matheuslmarchetti/Challenges-ONE-Oracle-Next-Education-Alura/blob/main/files-for-readme/decodificadordetextouse.gif?raw=true "Decodificador de Texto Uso"
 
-[conversoresuso]: https://media.giphy.com/media/VbDqmJbxaeYCoM92Ow/giphy.gif "Gif"
+[conversoresuso]: https://github.com/matheuslmarchetti/Challenges-ONE-Oracle-Next-Education-Alura/blob/main/files-for-readme/conversormoedaspart1.gif?raw=true "Conversores Uso"

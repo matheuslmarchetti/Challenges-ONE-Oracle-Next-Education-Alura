@@ -1,4 +1,4 @@
-# Decodificador de Texto
+# Decodificador de Texto ![Status Badge](https://img.shields.io/badge/Status-Done-black?style=plastic&label=Status&labelColor=%23030303&color=%2301FF4D)
 
 ![Capa Decodificador de Texto][capadecodificadordetexto]
 
