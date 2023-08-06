@@ -38,8 +38,6 @@
 
 ### Linguagens, dependências e libs utilizadas
 
-Liste todas as dependências e libs que o usuário deve ter instalado na máquina antes de rodar a aplicação
-
 - [Java JDK Development Kit 17.0.8 downloads](https://www.oracle.com/br/java/technologies/downloads/#java17)
 - [Eclipse IDE](https://www.eclipse.org/downloads/packages/installer)
 - [AwesomeAPI - API de Cotações](https://docs.awesomeapi.com.br/api-de-moedas)
