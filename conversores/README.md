@@ -16,7 +16,6 @@
   - [Pré-requisitos](#pré-requisitos)
   - [Instalação](#instalação)
     - [Acesso ao projeto](#acesso-ao-projeto)
-    - [Testes](#testes)
   - [Deploy](#deploy)
 
 - [Uso](#uso)
@@ -92,31 +91,35 @@ Abaixo está um exemplo de como você pode instruir seu público sobre como inst
    
    #### Acesso ao projeto
    
-   Você pode [acessar o código fonte do projeto](https://github.com/matheuslmarchetti/Template-Readme-PT-BR) ou [baixá-lo](https://github.com/matheuslmarchetti/Template-Readme-PT-BR/archive/refs/heads/main.zip).
-
-#### Testes
-
-Coloque um passo a passo para executar os testes
-
-```
-$ npm test, rspec, etc 
-```
+   Você pode [acessar o código fonte do projeto](https://github.com/matheuslmarchetti/Challenges-ONE-Oracle-Next-Education-Alura/tree/main/conversores) ou [baixá-lo](https://github.com/matheuslmarchetti/Challenges-ONE-Oracle-Next-Education-Alura/archive/refs/heads/main.zip).
 
 ### Deploy
 
-> Link do deploy da aplicação ou gifs. Exemplo com GitHub Pages: [Marchetti Blog](https://matheuslmarchetti.github.io/Bootcamp-Potencia-Tech-Angular-Developer-Powered-by-iFood-DIO/angular-blog/dist/angular-blog/)
+> A aplicação encontra-se como um arquivo executável no diretório: [deploy](https://github.com/matheuslmarchetti/Challenges-ONE-Oracle-Next-Education-Alura/tree/main/conversores/deploy)
 
-Se ainda não houver deploy, insira capturas de tela da aplicação ou gifs
+1. Faça o download do arquivo em um diretório de sua preferência. Caso não tenha feito o download do projeto por completo.
 
-![alt text][2]
+2. Abra o terminal dentro do diretório que se encontra o arquivo 'Sistema de Conversores.jar' e execute a linha de comando a seguir para interagir com a aplicação.
+
+```
+java -jar Sistema\ de\ Conversores.jar
+```
+
+> > Observação: pode haver modos diferentes para abrir o executável do projeto dependendo do seu sistema operacional. A linha de comando acima se refere a distribuição Linux Ubuntu. Sempre confira no manual do seu sistema operacional o modo para executar arquivos '.jar'
 
 <p align="right">(<a href="#readme-top">Voltar ao topo</a>)</p>
 
 ## Uso
 
-Explique com mais detalhes como a sua aplicação poderia ser utilizada. O uso de **gifs** aqui seria bem interessante.
+![conversormoedaspart1][conversormoedaspart1]
+![conversormoedaspart2][conversormoedaspart2]
+![conversormoedaspart3][conversormoedaspart3]
 
-![alt text][3]
+![conversortemperaturaspart1][conversortemperaturaspart1]
+![conversortemperaturaspart2][conversortemperaturaspart2]
+
+![conversortempopart1][conversortempopart1]
+![conversortempopart2][conversortempopart2]
 
 <p align="right">(<a href="#readme-top">Voltar ao topo</a>)</p>
 
@@ -124,26 +127,37 @@ Explique com mais detalhes como a sua aplicação poderia ser utilizada. O uso d
 
 The [MIT License](https://github.com/matheuslmarchetti/Challenges-ONE-Oracle-Next-Education-Alura/blob/main/LICENSE) (MIT)
 
-Copyright :copyright: Ano - Título do Projeto
+Copyright :copyright: 2023 - Conversores
 
 <p align="right">(<a href="#readme-top">Voltar ao topo</a>)</p>
 
 ## Desenvolvedores e Contribuintes
 
-Liste o time responsável pelo desenvolvimento do projeto
+Responsável pelo desenvolvimento do projeto
 
-| [<img src="https://avatars.githubusercontent.com/u/105798967?v=4" width=115><br><sub>Matheus L. Marchetti</sub>](https://github.com/matheuslmarchetti) | [<img src="https://avatars.githubusercontent.com/u/105798967?v=4" width=115><br><sub>Matheus L. Marchetti</sub>](https://github.com/matheuslmarchetti) | [<img src="https://avatars.githubusercontent.com/u/105798967?v=4" width=115><br><sub>Matheus L. Marchetti</sub>](https://github.com/matheuslmarchetti) |
-|:------------------------------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| [<img src="https://avatars.githubusercontent.com/u/105798967?v=4" width=115><br><sub>Matheus L. Marchetti</sub>](https://github.com/matheuslmarchetti) |
+|:------------------------------------------------------------------------------------------------------------------------------------------------------:|
 
 <p align="right">(<a href="#readme-top">Voltar ao topo</a>)</p>
 
 ## Agradecimentos
 
-Use este espaço para listar os recursos que você considera úteis e aos quais gostaria de dar crédito. Eu incluí alguns dos meus favoritos para começar!
+Obrigado a todos os professores, instrutores e demais membros da equipe da formação da turma 5 do ONE Oracle Next Education ministrado pela Alura. Pelo desafio proposto, material de apoio e conhecimento compartilhado.
 
 <p align="right">(<a href="#readme-top">Voltar ao topo</a>)</p>
 
 [conversoresprojectcover]: https://github.com/matheuslmarchetti/Challenges-ONE-Oracle-Next-Education-Alura/blob/main/files-for-readme/conversoresprojectcover.png?raw=true "Conversores Project Cover"
-[2]: https://media.giphy.com/media/A06UFEx8jxEwU/giphy.gif "Gif"
 
-[3]: https://media.giphy.com/media/VbDqmJbxaeYCoM92Ow/giphy.gif "Gif"
+[conversormoedaspart1]: https://github.com/matheuslmarchetti/Challenges-ONE-Oracle-Next-Education-Alura/blob/main/files-for-readme/conversormoedaspart1.gif?raw=true "conversormoedaspart1"
+
+[conversormoedaspart2]: https://github.com/matheuslmarchetti/Challenges-ONE-Oracle-Next-Education-Alura/blob/main/files-for-readme/conversormoedaspart2.gif?raw=true "conversormoedaspart2"
+
+[conversormoedaspart3]: https://github.com/matheuslmarchetti/Challenges-ONE-Oracle-Next-Education-Alura/blob/main/files-for-readme/conversormoedaspart3.gif?raw=true "conversormoedaspart3"
+
+[conversortemperaturaspart1]: https://github.com/matheuslmarchetti/Challenges-ONE-Oracle-Next-Education-Alura/blob/main/files-for-readme/conversortemperaturaspart1.gif?raw=true "conversortemperaturaspart1"
+
+[conversortemperaturaspart2]: https://github.com/matheuslmarchetti/Challenges-ONE-Oracle-Next-Education-Alura/blob/main/files-for-readme/conversortemperaturaspart2.gif?raw=true "conversortemperaturaspart2"
+
+[conversortempopart1]: https://github.com/matheuslmarchetti/Challenges-ONE-Oracle-Next-Education-Alura/blob/main/files-for-readme/conversortempopart1.gif?raw=true "conversortempopart1"
+
+[conversortempopart2]: https://github.com/matheuslmarchetti/Challenges-ONE-Oracle-Next-Education-Alura/blob/main/files-for-readme/conversortempopart2.gif?raw=true "conversortempopart2"
