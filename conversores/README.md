@@ -42,6 +42,7 @@ Liste todas as dependências e libs que o usuário deve ter instalado na máquin
 
 - [Java JDK Development Kit 17.0.8 downloads](https://www.oracle.com/br/java/technologies/downloads/#java17)
 - [Eclipse IDE](https://www.eclipse.org/downloads/packages/installer)
+- [AwesomeAPI - API de Cotações](https://docs.awesomeapi.com.br/api-de-moedas)
 - [Json Simple 1.1.1.jar](https://code.google.com/archive/p/json-simple/downloads)
 
 <p align="right">(<a href="#readme-top">Voltar ao topo</a>)</p>
