@@ -33,61 +33,46 @@
 ### Descrição do projeto
 
 <p align="justify">
-  Descrição breve do projeto compondo um parágrafo ou dois. 
+  Esse projeto apresenta uma aplicação para desktop de conversores de moedas, temperaturas e tempo. Sendo, que o conversor de moedas faz uso de uma API que retorna o valor da cotação atualizado, conforme o valor da moeda vigente no mercado financeiro.
 </p>
 
 ### Linguagens, dependências e libs utilizadas
 
 Liste todas as dependências e libs que o usuário deve ter instalado na máquina antes de rodar a aplicação
 
-- [React](https://pt-br.reactjs.org/docs/create-a-new-react-app.html)
-- [React PDF](https://react-pdf.org/)
-
-...
-
-Liste as tecnologias utilizadas no projeto que **não** forem reconhecidas pelo Github 
+- [Java JDK Development Kit 17.0.8 downloads](https://www.oracle.com/br/java/technologies/downloads/#java17)
+- [Eclipse IDE](https://www.eclipse.org/downloads/packages/installer)
+- [Json Simple 1.1.1.jar](https://code.google.com/archive/p/json-simple/downloads)
 
 <p align="right">(<a href="#readme-top">Voltar ao topo</a>)</p>
 
 ## Começando
 
-Este é um exemplo de como você pode dar instruções sobre como configurar seu projeto localmente. Para colocar uma cópia local em funcionamento, siga estas etapas de exemplo simples.
+Para colocar uma cópia local em funcionamento e/ou fazer edições ao projeto, siga as etapas abaixo.
 
 ### Pré-requisitos
 
-Este é um exemplo de como listar as coisas que você precisa para usar o software e como instalá-las.
+Lista de ferramentas que precisam ser instaladas.
 
-- npm
+- [Git](https://git-scm.com/)
+
+- [Java JDK Development Kit 17.0.8 downloads](https://www.oracle.com/br/java/technologies/downloads/#java17)
+
+- [Eclipse IDE](https://www.eclipse.org/downloads/packages/installer)
   
-  ```
-  npm install npm@latest -g
-  ```
-
-- [Node](https://nodejs.org/en/download/)
+  > Caso queira pode utilizar outra IDE. Mas, fique atento que esse projeto foi desenvolvido originalmente no Eclipse IDE. Se você optar por utilizar uma IDE diferente, pode ser necessário configurações extras que dependeram de cada IDE.
 
 ### Instalação
 
-Abaixo está um exemplo de como você pode instruir seu público sobre como instalar e configurar seu aplicativo. Este modelo não depende de nenhuma dependência ou serviço externo.
-
-1. Obtenha uma chave de API gratuita em https://example.com
+1. Faça o download da lista de ferramentas dos Pré-Quisitos
 
 2. Clonar o repositório
    
    ```
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/matheuslmarchetti/Challenges-ONE-Oracle-Next-Education-Alura.git
    ```
 
-3. Instalar pacotes NPM
-   
-   ```
-   npm install
-   ```
-
-4. Insira sua API emconfig.js
-   
-   ```
-   const API_KEY = 'ENTER YOUR API';
-   ```
+3. Mantenha apenas o diretório "conversores" e exclua os demais diretórios, caso queira trabalhar apenas o projeto do Conversores
    
    #### Acesso ao projeto
    

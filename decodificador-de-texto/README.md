@@ -70,7 +70,7 @@ Lista de ferramentas que precisam ser instaladas.
    git clone https://github.com/matheuslmarchetti/Challenges-ONE-Oracle-Next-Education-Alura.git
    ```
 
-3. Excluir diretório "conversores" caso queira trabalhar apenas o projeto do Decodificador de Texto
+3. Mantenha apenas o diretório "decodificador-de-texto" e exclua os demais diretórios, caso queira trabalhar apenas o projeto do Decodificador de Texto
 
 #### Acesso ao projeto
 
