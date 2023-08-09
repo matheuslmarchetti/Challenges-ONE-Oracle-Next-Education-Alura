@@ -38,8 +38,6 @@
 
 ### Linguagens, dependências e libs utilizadas
 
-Liste todas as dependências e libs que o usuário deve ter instalado na máquina antes de rodar a aplicação
-
 - [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
 - [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [JavaScript ES6](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
